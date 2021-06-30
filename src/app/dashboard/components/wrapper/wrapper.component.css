@@ -1,0 +1,48 @@
+mat-sidenav-container{
+    height: 100%;
+}
+mat-sidenav{
+    width:250px;
+}
+mat-nav-list span{
+    padding-left:8px;
+}
+.mat-list-base{
+    padding-top: 0;
+}
+.spacer{
+    flex: 1 1 auto;
+}
+.mat-list-item{
+    font-family: 'Sarabun';
+    height:48px !important;
+}
+mat-toolbar{
+    font-family: 'Sarabun';
+}
+mat-toolbar a{
+    display:inline-block;
+    margin:0 10px;
+    color:white;
+    text-decoration: none;
+}
+.active-list-item {
+    color: #3F51B5 !important; /* Note: You could also use a custom theme */
+    background-color:whitesmoke;
+  }
+.mat-toolbar {
+    min-height: 56px !important; 
+    height: 56px !important;
+  }
+
+.chevrom_right{
+    transition: 300ms ease-in-out;
+    transform: rotate(0deg);
+    right:0;
+    float:right;
+    position:absolute;
+    
+}
+.chevrom_right.rotated{
+    transform:rotate(180deg);
+}

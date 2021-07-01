@@ -13,9 +13,6 @@ export class RoleComponent implements OnInit {
   }
 
 openModal(modalID:string){
-  console.log("testModal()");
-  // let myModal = document.getElementById('testModal');
-  // myModal?.click();
   let btn = document.createElement("button");
   btn.setAttribute("data-bs-toggle","modal");
   btn.setAttribute("data-bs-target","#"+modalID);

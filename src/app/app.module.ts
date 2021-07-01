@@ -11,11 +11,16 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from  '@angular/material/button';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,10 @@ import { MatButtonModule } from  '@angular/material/button';
     MatListModule,
     MatIconModule,
     MatButtonModule,
-    //UserModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+
   
   ],
   providers: [],

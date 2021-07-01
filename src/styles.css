@@ -1,4 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Sarabun', sans-serif, Roboto, "Helvetica Neue", sans-serif; }
+
+.topic{
+    font-size: 1.4rem;
+    /* font-weight: 800; */
+    font-family: 'Prompt', sans-serif;
+    color:#3f51b5;
+    margin:16px 0;
+}
+.form-group button{
+    margin-right:8px;
+}

@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -7,8 +8,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
-  { path:'user',loadChildren: () => import('./features/user/user-routing.module').then((m)=>m.UserRoutingModule)},
   { path: '**', redirectTo: '', pathMatch: 'full' },
+  
+  // {path:'home',component:HomeComponent},
+  // {path: '',redirectTo:'home',pathMatch:'full'}
 ];
 
 @NgModule({

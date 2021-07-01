@@ -16,6 +16,13 @@ const routes: Routes = [
             (m) => m.UserRoutingModule
           ),
       },
+      {
+        path: 'role',
+        loadChildren: () =>
+          import('../features/role/role-routing.module').then(
+            (m) => m.RoleRoutingModule
+          ),
+      },
     ],
   },
   { path: '**', redirectTo: '', pathMatch: 'full' },

@@ -1,4 +1,3 @@
-import { UserModule } from '../features/user/user.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
@@ -9,8 +8,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from  '@angular/material/button';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule} from '@angular/material/menu';
 
+import { UserModule } from '../features/user/user.module';
+import { RoleModule } from '../features/role/role.module';
 
 
 
@@ -28,7 +29,9 @@ import {MatMenuModule} from '@angular/material/menu';
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
-    UserModule
+    UserModule,
+    RoleModule,
+
   ]
 })
 export class DashboardModule { }

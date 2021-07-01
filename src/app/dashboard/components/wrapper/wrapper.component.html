@@ -13,8 +13,9 @@
                 <mat-icon mat-list-icon class="chevrom_right" [ngClass]="{'rotated':isExpanded}">chevron_right
                 </mat-icon>
             </mat-list-item> -->
-            
-            <mat-list-item [routerLink]="['/dashboard']" routerLinkActive="active-list-item" (click)="isOpenSidenav=!isOpenSidenav">
+
+            <mat-list-item [routerLink]="['/dashboard']" routerLinkActive="active-list-item"
+                (click)="isOpenSidenav=!isOpenSidenav">
                 <mat-icon mat-list-icon class="">home</mat-icon>
                 <span>หน้าหลัก</span>
             </mat-list-item>
@@ -24,12 +25,18 @@
                 <span class="">info</span>
             </mat-list-item>
             <mat-divider></mat-divider>
-        
-            <mat-list-item [routerLink]="['/user']" routerLinkActive="active-list-item" (click)="isOpenSidenav=!isOpenSidenav">
+
+            <mat-list-item [routerLink]="['/user']" routerLinkActive="active-list-item"
+                (click)="isOpenSidenav=!isOpenSidenav">
                 <mat-icon mat-list-icon class="">perm_identity</mat-icon>
-                <span class="">user</span>
+                <span class="">ผู้ใช้งาน</span>
             </mat-list-item>
-            <mat-list-item  (click)="isOpenSidenav=!isOpenSidenav">
+            <mat-list-item [routerLink]="['/role']" routerLinkActive="active-list-item"
+                (click)="isOpenSidenav=!isOpenSidenav">
+                <mat-icon mat-list-icon class="">perm_identity</mat-icon>
+                <span class="">สิทธิ์การใช้งาน</span>
+            </mat-list-item>
+            <mat-list-item (click)="isOpenSidenav=!isOpenSidenav">
                 <mat-icon mat-list-icon class="">logout</mat-icon>
                 <span class="">ออกจากระบบ</span>
             </mat-list-item>
@@ -43,17 +50,18 @@
                 <mat-icon>menu</mat-icon>
             </button>
             <a [routerLink]="['dashboard']"><span>Activity Transcript</span></a>
-            
+
             <span class="spacer"></span>
 
             <button mat-icon-button [matMenuTriggerFor]="profileMenu" *ngIf="true">
                 <!-- <i class="fa fa-user white-icon" aria-hidden="true"></i> -->
-                <mat-icon>account_circle</mat-icon> 
-              </button>
-              <mat-menu #profileMenu="matMenu">
-                <button mat-menu-item routerLink="/profile"> <i class="fa fa-user" aria-hidden="true"></i> Profile </button>
-                <button mat-menu-item > <i class="fa fa-sign-out" aria-hidden="true"></i> Logout </button>
-              </mat-menu>
+                <mat-icon>account_circle</mat-icon>
+            </button>
+            <mat-menu #profileMenu="matMenu">
+                <button mat-menu-item routerLink="/profile"> <i class="fa fa-user" aria-hidden="true"></i> Profile
+                </button>
+                <button mat-menu-item> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout </button>
+            </mat-menu>
         </mat-toolbar-row>
     </mat-toolbar>
 

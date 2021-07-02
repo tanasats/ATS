@@ -29,7 +29,7 @@ export class UserService {
     //console.log(error);
     switch (error.status) {
       case 0:
-        return throwError('backend out of service');
+        return throwError('Out of service');
         break;
       case 400:
         return throwError(error.error);
@@ -39,13 +39,13 @@ export class UserService {
     }
   }
 
-  getAll(): Observable<any> {
+  getall(): Observable<any> {
     console.log('getall()');
     return this.http
       .get(endpoint + 's', this.httpOptions)
       .pipe(catchError(this.handleError));
   }
-  getById(id: any): Observable<any> {
+  getbyid(id: any): Observable<any> {
     return this.http
       .get(endpoint + '/' + id, this.httpOptions)
       .pipe(catchError(this.handleError));

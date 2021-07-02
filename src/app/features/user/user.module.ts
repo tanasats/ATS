@@ -9,11 +9,12 @@ import { MatButtonModule} from '@angular/material/button';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 
+
 @NgModule({
   declarations: [
     UserComponent,
     UserAddComponent,
-    UserEditComponent
+    UserEditComponent,
   ],
   imports: [
     CommonModule,

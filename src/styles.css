@@ -1,17 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Sarabun', sans-serif, Roboto, "Helvetica Neue", sans-serif; }
-
-.topic{
-    font-size: 1.4rem;
-    /* font-weight: 800; */
-    font-family: 'Prompt', sans-serif;
-    color:#3f51b5;
-    margin:16px 0;
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mitr:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prompt&display=swap");
+html,
+body {
+  height: 100%;
 }
-.form-group button{
-    margin-right:8px;
+body {
+  margin: 0;
+  font-family: "Sarabun", sans-serif, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+}
+footer {
+  position: fixed;
+  bottom: 0px;
+  overflow: hide;
+  width: 100%;
+  height: 56px;
+  font-size: 0.85rem;
+  background-color: #3f51b5;
+  padding:4px 24px;
+  color:lavender
+}
+/* footer>span{
+  line-height:0.5rem;
+} */
+
+.topic {
+  font-size: 1.4rem;
+  /* font-weight: 800; */
+  font-family: "Prompt", sans-serif;
+  color: #3f51b5;
+  margin: 16px 0 8px 0;
+}
+.form-group button {
+  margin-right: 8px;
+}
+.btn-sm{
+  padding: .2rem .5rem;
+}
+.error{
+  font-size:0.8rem;
+  color:red;
+}
+.form-control{
+  padding:0.2rem 0.75rem;
+}
+.toolbar-fix-top{
+  position: fixed;
+}
+mat-icon {
+  vertical-align: middle;
+}
+mat-icon.icon-sm{
+  font-size: 22px;
 }

@@ -1,1 +1,48 @@
-<router-outlet></router-outlet>
+<div [class.app-dark-theme]="true">
+    <mat-sidenav-container fullscreen class="sidenav-container">
+        
+        <app-toolbar [inputSideNav]="sidenav"></app-toolbar>
+
+        <mat-sidenav #sidenav mode="over" class="app-sidenav">
+            <div style="height:64px;line-height: 40px;padding:0 16px;" class="bg-light">
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+                    (click)="sidenav.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div>
+            <mat-nav-list>
+                <mat-list-item [routerLink]="['/home']" routerLinkActive="router-link-active"
+                    (click)="sidenav.toggle()">
+                    <mat-icon matListIcon>home</mat-icon>
+                    <span>หน้าหลัก</span>
+                </mat-list-item>
+                <mat-list-item [routerLink]="['/checkcard']" routerLinkActive="router-link-active"
+                    (click)="sidenav.toggle()">
+                    <mat-icon matListIcon>home</mat-icon>
+                    <span>เช็คชื่อเข้าร่วมกิจกรรม</span>
+                    <!-- <button mat-icon-button>
+                        <mat-icon>info</mat-icon>
+                    </button> -->
+                </mat-list-item>
+                <mat-list-item [routerLink]="['/home']" routerLinkActive="router-link-active"
+                    (click)="sidenav.toggle()">
+                    <mat-icon matListIcon>home</mat-icon>
+                    <span>ลงทะเบียนกิจกรรม</span>
+                </mat-list-item>
+                <mat-list-item [routerLink]="['/home']" routerLinkActive="router-link-active"
+                    (click)="sidenav.toggle()">
+                    <mat-icon matListIcon>home</mat-icon>
+                    <span>กิจกรรมที่ลงทะเบียนแล้ว</span>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-sidenav>
+
+
+
+        <div id="app-content"> <!-- style="padding-top:64px;height: calc(100%-64px);"> -->
+            <router-outlet></router-outlet>
+        
+        <app-footer></app-footer>
+</div>
+    </mat-sidenav-container>
+</div>

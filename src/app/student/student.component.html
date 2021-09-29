@@ -1,0 +1,11 @@
+<div style="height:calc(100vh - 128px);margin:0px 0px;">
+    <mat-sidenav-content>
+        <!--[style.margin-left.px]="!isExpanded ? 60 : 250"> -->
+        <mat-sidenav #sidenav mode="side" opened="true" [style.width.px]="!isExpanded ? 60 : 250" style="height:calc(100vh + 24px)">
+            <sidenav (toggleMenu)="toggleMenu()" [isExpanded]="isExpanded"></sidenav>
+        </mat-sidenav>
+        <div class="module-container" [style.margin-left.px]="!isExpanded ? 60 : 250" style="height:calc(100vh + 24px)">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</div>

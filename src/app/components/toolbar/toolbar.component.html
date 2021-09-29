@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="app-toolbar">
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+        (click)="inputSideNav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button> -->
+    <a class="applogo" [routerLink]="['/home']" routerLinkActive="router-link-active">
+        <span class="d-none d-md-block">Student Activity Management</span>
+        <span class="d-none d-sm-block d-md-none">Student Activity</span>
+        <span class="d-block d-sm-none">SAM</span>
+    </a>
+    <span class="spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button [routerLink]="['/login']" routerLinkActive="router-link-active" mat-icon-button class="example-icon"
+        aria-label="">
+        <mat-icon>login</mat-icon>
+    </button>
+    <button [routerLink]="['/student']" routerLinkActive="router-link-active"  mat-icon-button class="example-icon" aria-label="">
+        <mat-icon>person</mat-icon>
+    </button>
+</mat-toolbar>

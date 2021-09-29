@@ -1,0 +1,63 @@
+<div style="height:64px">
+    <mat-toolbar>
+        <button mat-icon-button class="example-icon" aria-label="" (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>My Application</span>
+    </mat-toolbar>
+</div>
+<section style="height:calc(100vh - 192px);margin:0px 0px;">
+
+
+    <mat-drawer-container class="example-container" autosize>
+        <mat-drawer #drawer class="example-sidenav" mode="side" style="width:220px;">
+
+            <!-- <p>Auto-resizing sidenav</p>
+            <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+            <button (click)="showFiller = !showFiller" mat-raised-button>
+                Toggle extra text
+            </button> -->
+
+            <mat-nav-list>
+                <mat-list-item  [routerLink]="['/student/checkpoint']" routerLinkActive="router-link-active" (click)="drawer.toggle()">
+                    <button mat-icon-button color="primary" aria-label="">
+                        <mat-icon>favorite</mat-icon>
+                    </button> 
+                    <a matLine>
+                        การเช็คชื่อ
+                    </a>
+                    <!-- <button mat-icon-button color="primary" aria-label="">
+                        <mat-icon>favorite</mat-icon>
+                    </button> -->
+                </mat-list-item>
+                <mat-list-item [routerLink]="['/student/register']" routerLinkActive="router-link-active" (click)="drawer.toggle()">
+                    <a matLine >
+                        ลงทะเบียนกิจกรรม
+                    </a>
+                    <!-- <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+                        <mat-icon>favorite</mat-icon>
+                    </button> -->
+                </mat-list-item>
+                <mat-list-item [routerLink]="['/student/register']" routerLinkActive="router-link-active" (click)="drawer.toggle()">
+                    <a matLine >
+                        การเข้าร่วมกิจกรรม
+                    </a>
+                    <!-- <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+                        <mat-icon>favorite</mat-icon>
+                    </button> -->
+                </mat-list-item>
+            </mat-nav-list>
+
+        </mat-drawer>
+
+        <div class="example-sidenav-content">
+            <!-- <button type="button" mat-button (click)="drawer.toggle()">
+                Toggle sidenav
+            </button> -->
+            <router-outlet></router-outlet>
+
+        </div>
+
+    </mat-drawer-container>
+
+</section>

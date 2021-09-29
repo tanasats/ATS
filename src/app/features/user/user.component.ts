@@ -1,6 +1,11 @@
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { UserService } from './services/user.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-user',
@@ -9,29 +14,68 @@ import { UserService } from './services/user.service';
 })
 export class UserComponent implements OnInit {
   users: any;
-  userdel = { id: 0, name: '' };
+  userdel = { id: 0, fullname: '' };
+  rolesdata: any;
 
-  formUpdate = new FormGroup({
-    id: new FormControl('', Validators.required),
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
+  // formUpdate = new FormGroup({
+  //   id: new FormControl('', Validators.required),
+  //   fullname: new FormControl('', Validators.required),
+  //   email: new FormControl('', Validators.required),
+  //   password: new FormControl('', Validators.required),
+  // });
+  // formCreate = new FormGroup({
+  //   id: new FormControl(''),
+  //   fullname: new FormControl('', Validators.required),
+  //   email: new FormControl('', Validators.required),
+  //   password: new FormControl('',Validators.required),
+  //   roleid: new FormControl(''),
+  // });
+
+  formUpdate = this.fb.group({
+    id: '',
+    fullname: ['', Validators.required],
+    email: ['', Validators.required], 
+    password: ['', Validators.required],
+    roleid:''
   });
   get fu() {
     return this.formUpdate.controls;
   }
-  formCreate = new FormGroup({
-    id: new FormControl(''),
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
+
+  formCreate = this.fb.group({
+    id: '',
+    fullname: ['', Validators.required],
+    email: ['', Validators.required], 
+    password: ['', Validators.required],
+    roleid:''
   });
   get fc() {
     return this.formUpdate.controls;
   }
 
-  constructor(private userService: UserService) {}
+
+  roleid_array: any[] = [];
+
+  constructor(private userService: UserService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.getAll();
+    this.getAllRoles();
+  }
+
+  onCbChange(e: any) { 
+    //console.log(e);
+    console.log(e.target.checked);
+    console.log(e.target.value);
+    
+    if (e.target.checked) {
+      this.roleid_array.push(e.target.value);
+    } else {
+      let index = this.roleid_array.findIndex(element=>element===e.target.value);
+      console.log('index '+index);
+      let result = this.roleid_array.splice(index, 1);
+    }
+    console.log(this.roleid_array);
   }
 
   getAll() {
@@ -40,6 +84,24 @@ export class UserComponent implements OnInit {
         //console.log('subscribe:rxjs -->(res)');  console.log(res);
         this.users = res;
         console.log(this.users);
+      },
+      (err) => {
+        //console.log('subscribe:rxjs -->(err)');  console.log(err);
+        if (err.message) {
+          //this.showNotify(err.message);
+        } else {
+          //this.showNotify(err);
+        }
+      }
+    );
+  }
+
+  getAllRoles() {
+    this.userService.getallroles().subscribe(
+      (res) => {
+        //console.log('subscribe:rxjs -->(res)');  console.log(res);
+        this.rolesdata = res;
+        console.log(this.rolesdata);
       },
       (err) => {
         //console.log('subscribe:rxjs -->(err)');  console.log(err);
@@ -103,17 +165,33 @@ export class UserComponent implements OnInit {
   submitCreate() {
     if (this.formCreate.valid) {
       let data = this.formCreate.value;
-      data.password = 'password';
+      //data.password = 'password';
       data.id = null;
+      data.roleid=this.roleid_array;
+      let rolelist = data.roleid;
+      if(data.roleid){ 
+        delete data.roleid;
+      }
       console.log(data);
+
 
       this.userService.insert(data).subscribe(
         (res) => {
           console.log(res);
           if (res.affectedRows) {
+            this.userService.adduserrole(data.id,1).subscribe(
+              (res)=>{
+                console.log('add user role');
+                console.log(res);
+              },
+              (err)=>{
+                console.log(err);
+              }
+            )
             this.getAll();
             this.closeModal();
             this.formCreate.reset();
+
           }
         },
         (err) => {
@@ -122,6 +200,10 @@ export class UserComponent implements OnInit {
       );
     }
   }
+  addUserRole(id:any,roleid:any){
+    
+  }
+
   // Utility
   openModal(modalID: string) {
     let btn = document.createElement('button');
@@ -145,3 +227,5 @@ export class UserComponent implements OnInit {
     // [].forEach.call(collection,function(el:HTMLElement){el.click()})
   }
 }
+
+

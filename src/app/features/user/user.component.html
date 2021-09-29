@@ -1,7 +1,9 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-            <div class="topic"><mat-icon>person</mat-icon>&nbsp;ข้อมูลผู้ใช้งาน</div>
+            <div class="topic">
+                <mat-icon>person</mat-icon>&nbsp;ข้อมูลผู้ใช้งาน
+            </div>
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
                     <label class="col-form-label">ค้นหา</label>
@@ -14,10 +16,22 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search this site">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-default">
+                            <mat-icon>search</mat-icon>
+                        </button>
+                    </span>
+                </div>
+            </div>
             <div class="clearfix mt-3">
                 <div class="col-auto float-start">ข้อมูลทั้งหมด <span
                         class="badge rounded-pill bg-info text-dark">9999</span> รายการ</div>
-                <div class="col-auto float-end"><button class="btn btn-success btn-sm" (click)="onCreate()"><mat-icon class="icon-sm">control_point</mat-icon>&nbsp;เพิ่ม</button></div>  
+                <div class="col-auto float-end"><button class="btn btn-success btn-sm" (click)="onCreate()">
+                        <mat-icon class="icon-sm">control_point</mat-icon>&nbsp;เพิ่ม
+                    </button></div>  
             </div>
 
             <table class="table table-bordered table-hover mt-1 mb-3">
@@ -26,16 +40,40 @@
                         <th>#</th>
                         <th>ชื่อ</th>
                         <th class="d-none d-md-table-cell">อีเมล์</th>
+                        <th class="d-none d-md-table-cell">roleid</th>
                         <th>ดำเนินการ</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let user of users">
                         <td>{{user.id}}</td>
-                        <td>{{user.name}}
+                        <td>{{user.fullname}}
                             <div class="small d-md-none">{{user.email}}</div>
+
+
+                            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                                <mat-icon>more_vert</mat-icon>
+                              </button>
+                              <mat-menu #menu="matMenu">
+                                <button mat-menu-item>
+                                  <mat-icon>dialpad</mat-icon>
+                                  <span>Redial</span>
+                                </button>
+                                <button mat-menu-item disabled>
+                                  <mat-icon>voicemail</mat-icon>
+                                  <span>Check voice mail</span>
+                                </button>
+                                <button mat-menu-item>
+                                  <mat-icon>notifications_off</mat-icon>
+                                  <span>Disable alerts</span>
+                                </button>
+                              </mat-menu>
+
+
+
                         </td>
                         <td class="d-none d-md-table-cell">{{user.email}}</td>
+                        <td class="d-none d-md-table-cell">{{user.roleid | rolename}}</td>
                         <td class="p-0 align-middle text-center">
                             <button class="btn btn-warning btn-sm me-1" (click)="onUpdate(user)">
                                 <!-- <mat-icon class="icon-sm">edit</mat-icon> -->แก้ไข
@@ -47,8 +85,6 @@
                     </tr>
                 </tbody>
             </table>
-
-
 
             <router-outlet></router-outlet>
         </div>
@@ -65,7 +101,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                ต้องการลบข้อมูลผู้ใช้งาน : <span class="text-danger">{{userdel.name}}</span>
+                ต้องการลบข้อมูลผู้ใช้งาน : <span class="text-danger">{{userdel.fullname}}</span>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
@@ -97,9 +133,9 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label">Name</label>
-                        <input formControlName="name" class="form-control">
-                        <div *ngIf="fu.name.touched && fu.name.invalid" class="error">
-                            <span *ngIf="fu.name.errors?.required">name is required</span>
+                        <input formControlName="fullname" class="form-control">
+                        <div *ngIf="fu.fullname.touched && fu.fullname.invalid" class="error">
+                            <span *ngIf="fu.fullname.errors?.required">fullname is required</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -110,7 +146,13 @@
                             <span *ngIf="fu.email.errors?.email">must be a valid email </span>
                         </div>
                     </div>
-
+                    <div class="form-group">
+                        <label class="form-label">password</label>
+                        <input formControlName="password" class="form-control">
+                        <div *ngIf="fu.password.touched && fu.password.invalid" class="error">
+                            <span *ngIf="fu.password.errors?.required">password is required</span>
+                        </div>
+                    </div>
 
 
                 </div>
@@ -145,11 +187,11 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label">Name</label>
-                        <input formControlName="name" class="form-control">
-                        <div *ngIf="fc.name.touched && fc.name.invalid" class="error">
-                            <span *ngIf="fc.name.errors?.required">name is required</span>
+                        <input formControlName="fullname" class="form-control">
+                        <div *ngIf="fc.fullname.touched && fc.fullname.invalid" class="error">
                         </div>
                     </div>
+
                     <div class="form-group">
                         <label class="form-label">Email</label>
                         <input formControlName="email" type="email" class="form-control">
@@ -159,6 +201,65 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label class="form-label">password</label>
+                        <input formControlName="password" class="form-control">
+                        <div *ngIf="fu.password.touched && fu.password.invalid" class="error">
+                            <span *ngIf="fu.password.errors?.required">password is required</span>
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="form-group">
+                        <label for="" class="form-label">กำหนดกลุ่มสิทธิ์การใช้งาน</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>โปรดเลือก</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div> -->
+
+                    <div class="form-group">
+                        <label class="form-label">กำหนดสิทธิ์การใช้งาน</label>
+                        <!-- <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="role1">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Default checkbox
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="role2">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Checked checkbox
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="role3">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Checked checkbox
+                            </label>
+                        </div> -->
+
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" value="1" formControlName="roleid" (change)="onCbChange($event)">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">นิสิต</label>
+                          </div>
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" value="2" formControlName="roleid" (change)="onCbChange($event)">
+                            <label class="form-check-label" for="flexSwitchCheckChecked">เจ้าหน้าที่คณะ/หน่วยงาน</label>
+                          </div>
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" value="3" formControlName="roleid" (change)="onCbChange($event)">
+                            <label class="form-check-label" for="flexSwitchCheckChecked">ผู้ดูแลระบบ</label>
+                          </div>  
+
+                    </div>
+
+
+
+
 
 
                 </div>
@@ -167,6 +268,8 @@
                     <button type="submit" class="btn btn-primary" [disabled]="!formCreate.valid">ยืนยัน</button>
                 </div>
             </form>
+            <!-- <p>Form value: {{ formCreate.value | json }}</p>
+            <p>Form status: {{ formCreate.status | json }}</p>            -->
         </div>
     </div>
 </div>

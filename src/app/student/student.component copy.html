@@ -1,0 +1,81 @@
+<div class="wrapper-sidebar">
+    <!-- Sidebar  -->
+    <nav id="sidebar" class="sidebarCollapse">
+        <div class="sidebar-header">
+            <div class="text-center">
+            <img class="rounded-circle img-100px" style="width:150px;height:150px;" alt="" src="assets/images/avatar.jpg"
+          data-holder-rendered="true">
+            <p>
+                ธนศาสตร์ สุดจริง
+            </p>
+        </div>
+        </div>
+        <ul class="list-unstyled components">
+            <li>
+                <a [routerLink]="['/student']" routerLinkActive="router-link-active" >หน้าหลัก</a>
+            </li>
+            <li>
+                <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"  (click)="dataToggleCollapse($event)">การเช็คชื่อ</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu1">
+                    <li>
+                        <a [routerLink]="['/checkcard']" routerLinkActive="router-link-active" >ด้วยบัตรกิจกรรม</a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/checkqr']" routerLinkActive="router-link-active" >ด้วย QR Code</a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/checkgps']" routerLinkActive="router-link-active" >ด้วย Area Check</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"  (click)="dataToggleCollapse($event)">การลงทะเบียน</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu2">
+                    <li>
+                        <a [routerLink]="['register']" routerLinkActive="router-link-active" >ลงทะเบียนกิจกรรม</a>
+                    </li>
+                    <li>
+                        <a >กิจกรรมที่ลงทะเบียนแล้ว</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"  (click)="dataToggleCollapse($event)">การเข้าร่วมกิจกรรม</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu3">
+                    <li>
+                        <a [routerLink]="['activity']" routerLinkActive="router-link-active" >กิจกรรมทั้งหมด</a>
+                    </li>
+                    <li>
+                        <a >กิจกรรมมหาวิทยาลัย</a>
+                    </li>
+                    <li>
+                        <a >กิจกรรมคณะ/หน่วยงาน</a>
+                    </li>                    
+                    <!-- <li>
+                        <a>ตรวจสอบสำเร็จการศึกษา</a>
+                    </li>                         -->
+                </ul>
+            </li>
+
+        </ul>
+
+        <ul class="list-unstyled abtn">
+            <li>
+                <a>Download source</a>
+            </li>
+            <li>
+                <a>ออกจากระบบ</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="d-block d-md-none" style="width:25px;">
+        <img style="cursor:pointer;width:25px;height:80px;background-color: darkblue;" src="" (click)="sidebarToggle()" >
+    </div>
+    <!-- Page Content  -->
+    <div id="content">
+        <router-outlet></router-outlet>
+    </div>
+
+</div>

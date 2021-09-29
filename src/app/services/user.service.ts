@@ -45,6 +45,14 @@ export class UserService {
       .get(endpoint + 's', this.httpOptions)
       .pipe(catchError(this.handleError));
   }
+  getallroles(): Observable<any> {
+    console.log('getallroles()');
+    return this.http
+      .get(endpoint + '/roles', this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+
   getbyid(id: any): Observable<any> {
     return this.http
       .get(endpoint + '/' + id, this.httpOptions)
@@ -64,5 +72,11 @@ export class UserService {
     return this.http
       .put(endpoint + '/' + id, data, this.httpOptions)
       .pipe(catchError(this.handleError));
+  }
+
+  adduserrole(userid:any,roleid:any){
+    return this.http
+    .post(endpoint,[userid,roleid],this.httpOptions)
+    .pipe(catchError(this.handleError));
   }
 }

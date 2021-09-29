@@ -1,7 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mitr:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Prompt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+
 html,
 body {
   height: 100%;
@@ -9,49 +10,64 @@ body {
 body {
   margin: 0;
   font-family: "Sarabun", sans-serif, Roboto, "Helvetica Neue", sans-serif;
-  font-size: 16px;
+  font-size: 14px; 
 }
-footer {
-  position: fixed;
-  bottom: 0px;
-  overflow: hide;
-  width: 100%;
-  height: 56px;
-  font-size: 0.85rem;
-  background-color: #3f51b5;
-  padding:4px 24px;
-  color:lavender
+.app-toolbar {
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
 }
-/* footer>span{
-  line-height:0.5rem;
-} */
+.spacer {
+  flex: 1 1 auto;
+}
 
-.topic {
-  font-size: 1.4rem;
-  /* font-weight: 800; */
-  font-family: "Prompt", sans-serif;
-  color: #3f51b5;
-  margin: 16px 0 8px 0;
-}
-.form-group button {
-  margin-right: 8px;
-}
-.btn-sm{
-  padding: .2rem .5rem;
-}
-.error{
-  font-size:0.8rem;
-  color:red;
-}
-.form-control{
-  padding:0.2rem 0.75rem;
-}
-.toolbar-fix-top{
+.mat-toolbar {
+  z-index: 999;
   position: fixed;
 }
-mat-icon {
-  vertical-align: middle;
+.mat-tab-group {
+  margin-top: 64px !important;
 }
-mat-icon.icon-sm{
-  font-size: 22px;
+.mat-drawer-container {
+  height: 100%;
 }
+.main-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.applogo,
+.applogo:hover,
+.applogo:visited {
+  text-decoration: none;
+  color: white;
+}
+
+footer {
+  height: 56px;
+  bottom: 0;
+  background-color: darkgray;
+  width: 100%;
+  box-shadow: 0 50vh 0 50vh darkgray;
+}
+
+
+.router-link-active {
+  color: yellow;
+}
+
+
+
+/* page element theme */
+.page-content{
+  padding:20px 10px;
+}
+.page-topic {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: midnightblue;
+}
+

@@ -1,0 +1,32 @@
+.sidenav {
+  width: 249px;
+}
+
+.toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+.toggle:hover {
+  cursor: pointer;
+}
+.nav{
+  padding-top:0px;
+}
+.nav .active-link {
+  background-color: #fafafa;
+  border-left: solid 3px #1976d2;
+}
+
+mat-list-item,
+a {
+  border: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+mat-icon {
+  color: #1976d2;
+}

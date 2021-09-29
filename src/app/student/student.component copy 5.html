@@ -1,0 +1,34 @@
+<style>
+    .mini-sidenav{
+        display:block;
+        width:60px;
+        background-color: white;
+        border-right: 1px solid whitesmoke;
+    }
+
+</style>
+
+
+
+
+
+
+
+
+
+
+<section class="mini-sidenav" [class.sidenav]="isExpanded">
+    <div class="toggle">
+        <mat-icon (click)="isExpanded=!isExpanded">
+            {{ isExpanded ? "keyboard_arrow_left" : "dehaze" }}
+        </mat-icon>
+    </div>
+    <mat-list class="nav" *ngFor="let route of routeLinks">
+        <a mat-list-item routerLinkActive="active-link" class="hover" routerLink="{{ route.link }}">
+            <mat-icon mat-list-icon [matTooltip]="!isExpanded ? route.name : 'x'" matTooltipPosition="right">
+                {{ route.icon }}</mat-icon>
+            <p matLine *ngIf="isExpanded">{{ route.name }}</p>
+        </a>
+    </mat-list>
+</section>
+

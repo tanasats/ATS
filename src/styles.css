@@ -67,7 +67,39 @@ footer {
 }
 .page-topic {
   font-size: 1.2rem;
+  /* vertical-align: middle; */
   font-weight: bold;
-  color: midnightblue;
+  color: #1976d2;
+  margin-bottom: 8px;
+}
+.page-topic mat-icon{
+  color:#1976d2;
+  vertical-align: middle;
+  margin-right:8px;
 }
 
+
+
+
+.page-toolbar {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  padding: 20px 10px;
+  color: #1976d2;
+}
+
+.page-toolbar div {
+  flex-grow: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
+.page-toolbar div label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding-left: 10px;
+}
+.page-toolbar span button{
+  margin-left:5px;
+}

@@ -43,6 +43,13 @@ const routes: Routes = [
         (m) => m.StudentRoutingModule
       ),
   },
+   {
+     path: 'officer',
+     loadChildren:()=>
+       import('./officer/officer-routing.module').then(
+         (m) => m.OfficerRoutingModule
+       ),
+   },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 @NgModule({

@@ -14,6 +14,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -24,7 +27,7 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
 import { MatCardModule } from '@angular/material/card';
 import { LoginComponent } from './components/login/login.component';
 
-import { StudentModule } from './student/student.module';
+
 import { CardActivityComponent } from './components/card-activity/card-activity.component';
 import { CheckCardComponent } from './components/check-card/check-card.component';
 import { CheckQrComponent } from './components/check-qr/check-qr.component';
@@ -32,6 +35,9 @@ import { CheckGpsComponent } from './components/check-gps/check-gps.component';
 import { Bs5testComponent } from './components/bs5test/bs5test.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+
+import { StudentModule } from './student/student.module';
+import { OfficerModule } from './officer/officer.module';
 
 
 @NgModule({
@@ -46,20 +52,16 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,MatExpansionModule,
-    MatButtonModule,
-    MatCardModule,
-    MatMenuModule,
-    MatTabsModule,
-    MatTooltipModule,
+    MatToolbarModule,MatSidenavModule,MatListModule,MatIconModule,MatExpansionModule,
+    MatButtonModule,MatCardModule,MatMenuModule,MatTabsModule,MatTooltipModule,
+    MatDatepickerModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     UserModule,
     StudentModule,
+    OfficerModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

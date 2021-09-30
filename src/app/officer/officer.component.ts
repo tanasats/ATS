@@ -1,0 +1,19 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-officer',
+  templateUrl: './officer.component.html',
+  styleUrls: ['./officer.component.css']
+})
+export class OfficerComponent implements OnInit {
+
+  public isExpanded=false;
+  public toggleMenu() {
+    this.isExpanded = !this.isExpanded;
+  }
+
+  constructor() {}
+  ngOnInit(): void {
+  }
+
+}

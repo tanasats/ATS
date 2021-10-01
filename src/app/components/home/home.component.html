@@ -1,36 +1,36 @@
 <!-- Full Page Image Header with Vertically Centered Content -->
-<header class="masthead mb-2">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center">
-            <div class="col-12 text-center">
-                <h1 class="fw-light">ระบบบริหารจัดการกิจกรรมนิสิต</h1>
-                <p class="lead">Student Activity Management System</p>
-            </div>
-        </div>
+<header class="masthead pb-2 pt-5 bg-white">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12 text-center">
+        <h1 class="fw-light">ระบบบริหารจัดการกิจกรรมนิสิต</h1>
+        <p class="lead">Student Activity Management System</p>
+      </div>
     </div>
+  </div>
 </header>
 
 
 
 <div class="container my-3">
 
-    <div class="row">
-        <div class="col-md-7 mt-3 mb-2">
-            <div class="page-topic">ข่าวกิจกรรม</div>
-            <div class="row">
-                <div *ngFor="let item of activityList" class="col-xs-12 col-sm mb-3" style="min-width:230px;">
-                    <app-card-activity [ACTIVITY_ITEM]="item">
-                    </app-card-activity>
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-md-7 mt-3 mb-2">
+      <div class="page-topic">ข่าวกิจกรรม</div>
+      <div class="row">
+        <div *ngFor="let item of activityList" class="col-xs-12 col-sm mb-3" style="min-width:230px;">
+          <app-card-activity [ACTIVITY_ITEM]="item">
+          </app-card-activity>
         </div>
+      </div>
+    </div>
 
-        <div class="col-md-5 mt-3 mb-2">
-            <div class="page-topic">กิจกรรมที่เปิดลงทะเบียน</div>
+    <div class="col-md-5 mt-3 mb-2">
+      <div class="page-topic">กิจกรรมที่เปิดลงทะเบียน</div>
 
 
 
-<!-- 
+      <!-- 
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">
@@ -75,35 +75,46 @@
 
 
 
-            <div class="list-group">
-                <a class="list-group-item list-group-item-action" aria-current="true">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">ชื่อกิจกรรม</h5>
-                        <button class="btn btn-sm btn-primary">สมัคร</button>
-                    </div>
-                    <p class="mb-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque facere expedita
-                        voluptatibus unde mollitia.</p>
-                    <small>สมัครแล้ว 00 คน รับอีก 00 คน</small>
-                </a>
-                <a class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">ชื่อกิจกรรม</h5>
-                        <button class="btn btn-sm btn-danger">เต็ม</button>
-                    </div>
-                    <p class="mb-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, molestiae?</p>
-                    <small class="text-muted">เต็ม</small>
-                </a>
-                <a class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">ชื่อกิจกรรม</h5>
-                        <button class="btn btn-sm btn-danger">เต็ม</button>
-                    </div>
-                    <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, alias vel!</p>
-                    <small class="text-muted">And some muted small print.</small>
-                </a>
-            </div>
+      <div class="list-group">
+        <a class="list-group-item list-group-item-action" aria-current="true">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">กิจกรรมทอดกฐินสามัคคี มหาวิทยาลัยมหาสารคาม ประจำปี 2564</h5>
+          </div>
+          <p class="mb-1">มหาวิทยาลัยมหาสารคาม ขอเชิญร่วมทำบุญ “ทอดกฐินสามัคคี มหาวิทยาลัยมหาสารคาม ประจำปี 2564 (รูปแบบออนไลน์) วันศุกร์ที่ 5 พฤศจิกายน พ.ศ.2564 ทอดถวาย ณ วัดป่าศรัทธาธรรมวิทยา ตำบลโคกพระ อำเภอกันทรวิชัย จังหวัดมหาสารคาม</p>
+          <div class="d-flex w-100 justify-content-between">
+            <small>สมัครแล้ว 20 คน รับอีก - คน</small>
+            <button class="btn btn-sm btn-primary">สมัคร</button>
+          </div>
+        </a>
 
-            <!-- <div class="card border-0 shadow my-5">
+        <a class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">ขอเชิญบริจาคเลือด</h5>
+          </div>
+          <p class="mb-1">โรงพยาบาลสุทธาเวช ขอเชิญบริจาคโลหิต วันจันทร์, 04 ตุลาคม 2564, เวลา 10:00 น.ณ
+            บริเวณหน้าห้องพิพิธภัณฑ์ ชั้น 2 อาคารคณะแพทยศาสตร์ มหาวิทยาลัยมหาสารคาม หลังที่ 2 เขตพื้นที่ในเมือง</p>
+          <div class="d-flex w-100 justify-content-between">
+            <small class="text-muted">ผู้สม้ครเต็มจำนวน</small>
+            <button class="btn btn-sm btn-danger">เต็ม</button>
+          </div>
+        </a>
+
+        <a class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">โครงการปฐมนิเทศนิสิตใหม่ระดับปริญญาตรี ปีการศึกษา 2563</h5>
+          </div>
+          <p class="mb-1">โครงการปฐมนิเทศนิสิตใหม่ระดับปริญญาตรี ปีการศึกษา 2563 เพื่อต้อนรับนิสิตใหม่
+            มหาวิทยาลัยมหาสารคาม รุ่นภุมริน 12 ณ อาคารเฉลิมพระเกียรติในโอกาสฉลองพระชนมายุ 5 รอบ 2 เมษายน 2558
+            มหาวิทยาลัยมหาสารคาม (เขตพื้นที่ในเมือง) ในวันที่ 7 กรกฎาคม 2563</p>
+          <div class="d-flex w-100 justify-content-between">
+            <small class="text-muted">ปิดโครงการ</small>
+            <button class="btn btn-sm btn-secondary">ปิด</button>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- <div class="card border-0 shadow my-5">
                 <img class="img-fluid p-2"
                     src="https://dummyimage.com/600x400/eeeeee/555555&text=Student+Activity+Management">
                 <div class="card-body p-5">
@@ -114,8 +125,8 @@
                 </div>
             </div> -->
 
-        </div>
     </div>
+  </div>
 
 
 

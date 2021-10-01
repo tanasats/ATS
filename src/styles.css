@@ -103,3 +103,15 @@ footer {
 .page-toolbar span button{
   margin-left:5px;
 }
+
+
+.mat-form-field{
+  font-size:1rem;
+  font-family: "Sarabun", sans-serif, Roboto, "Helvetica Neue", sans-serif;
+}
+.mat-checkbox{
+  font-family: "Sarabun", sans-serif, Roboto, "Helvetica Neue", sans-serif;
+}
+.mat-label{
+  font-family: "Sarabun", sans-serif, Roboto, "Helvetica Neue", sans-serif;
+}

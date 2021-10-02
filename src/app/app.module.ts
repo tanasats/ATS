@@ -38,6 +38,7 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { StudentModule } from './student/student.module';
 import { OfficerModule } from './officer/officer.module';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -63,7 +64,10 @@ import { OfficerModule } from './officer/officer.module';
     OfficerModule,
     
   ],
-  providers: [],
+  providers: [
+    //{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } } 
+  ],
   bootstrap: [AppComponent],
+  
 })
 export class AppModule {}

@@ -19,6 +19,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -52,7 +53,7 @@ import { ActivityEditComponent } from './components/activity-edit/activity-edit.
     MatIconModule,MatSidenavModule,MatListModule,MatExpansionModule,MatToolbarModule,
     MatButtonModule,MatTooltipModule,MatFormFieldModule,MatDatepickerModule,
     MatInputModule,MatCardModule,MatRadioModule,MatSelectModule,MatNativeDateModule,
-    MatCheckboxModule
+    MatCheckboxModule,MatSlideToggleModule
   ]
 })
 export class OfficerModule { }

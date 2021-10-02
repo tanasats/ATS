@@ -110,8 +110,17 @@ footer {
   font-family: "Sarabun", sans-serif, Roboto, "Helvetica Neue", sans-serif;
 }
 .mat-checkbox{
+  color:gray;
+  font-size:1rem;
   font-family: "Sarabun", sans-serif, Roboto, "Helvetica Neue", sans-serif;
 }
-.mat-label{
+mat-label{
+  color:#333333;
+  font-size:1rem;
   font-family: "Sarabun", sans-serif, Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-button-disabled{
+  background-color: gray;
+  color:white;
 }

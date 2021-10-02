@@ -24,8 +24,8 @@ export class ActivityAddComponent implements OnInit {
     actname: ['', [Validators.required]],
     // firstName:['',[Validators.required]],
     // lastName:['',[Validators.required]],
-    address: ['', [Validators.required]],
-    dob: ['', [Validators.required]],
+    actdetail: [''],
+    //dob: ['', [Validators.required]],
     gender: ['', [Validators.required]],
   });
 
@@ -36,8 +36,8 @@ export class ActivityAddComponent implements OnInit {
 
   allComplete: boolean = false;
   updateAllComplete() {
-    this.allComplete =
-      this.faculty != null && this.faculty.every((t) => t.completed);
+    this.allComplete = this.faculty.every((t) => t.completed);
+    console.log("updateAllComplete() return ",this.allComplete);
   }
   someComplete(): boolean {
     return (
@@ -73,7 +73,8 @@ export class ActivityAddComponent implements OnInit {
   ];
 
   test() {
-    console.log('xxxxxx');
+    //console.log(this.faculty.every((t)=>t.completed));
+    console.log(this.faculty)
   }
 
   saveForm() {

@@ -33,6 +33,7 @@ import { ActivityComponent } from './components/activity/activity.component';
 import { MemberComponent } from './components/member/member.component';
 import { ActivityAddComponent } from './components/activity-add/activity-add.component';
 import { ActivityEditComponent } from './components/activity-edit/activity-edit.component';
+import { ActivityViewComponent } from './components/activity-view/activity-view.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { ActivityEditComponent } from './components/activity-edit/activity-edit.
     ActivityComponent,
     MemberComponent,
     ActivityAddComponent,
-    ActivityEditComponent
+    ActivityEditComponent,
+    ActivityViewComponent
   ],
   imports: [
     CommonModule,

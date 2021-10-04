@@ -1,3 +1,4 @@
+import { ActivityViewComponent } from './components/activity-view/activity-view.component';
 import { ActivityEditComponent } from './components/activity-edit/activity-edit.component';
 import { ActivityAddComponent } from './components/activity-add/activity-add.component';
 import { MemberComponent } from './components/member/member.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
       {path: 'activity',component: ActivityComponent},
       {path: 'activity/add',component:ActivityAddComponent},
       {path: 'activity/edit',component:ActivityEditComponent},
+      {path: 'activity/view',component:ActivityViewComponent},
       {path: 'member',component: MemberComponent}
     ]
   }

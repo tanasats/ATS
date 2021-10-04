@@ -31,12 +31,12 @@
 
                     <mat-card-content>
                         <div class="row">
-                            <div class="col-md-4">
-                                <mat-form-field class="w-100">
-                                    <input formControlName="actid" matInput placeholder="รหัสกิจกรรม">
+                            <div class="col-sm-4 col-md-4">
+                                <mat-form-field class="w-100 text-success">
+                                    <input formControlName="actcode" matInput placeholder="รหัสกิจกรรม" readonly>
                                 </mat-form-field>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-sm-8 col-md-8">
                                 <mat-form-field class="w-100">
                                     <input formControlName="actname" matInput placeholder="ชื่อกิจกรรม">
                                 </mat-form-field>
@@ -45,12 +45,8 @@
                         </div>
 
 
-
-
-
-
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-sm-6">
                                 <mat-form-field class="w-100">
                                     <mat-label>องค์กรที่จัด</mat-label>
                                     <mat-select>
@@ -60,7 +56,7 @@
                                     </mat-select>
                                 </mat-form-field>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-sm-6">
                                 <mat-form-field class="w-100">
                                     <mat-label>ผู้เปิดกิจกรรม</mat-label>
                                     <mat-select>
@@ -73,20 +69,17 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-sm-6 col-md-2">
                                 <mat-form-field class="w-100">
                                     <mat-label>ปีการศึกษา</mat-label>
                                     <mat-select>
-                                        <!-- <mat-option *ngFor="let food of foods" [value]="food.value">
-                            {{food.viewValue}}
-                          </mat-option> -->
-                                        <mat-option [value]='2564'>2564</mat-option>
-                                        <mat-option [value]='2565'>2565</mat-option>
-                                        <mat-option [value]='2566'>2566</mat-option>
+                                        <mat-option *ngFor="let year of yearlist" [value]="year.value">
+                                            {{year.name}}
+                                        </mat-option> 
                                     </mat-select>
                                 </mat-form-field>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-sm-6 col-md-2">
                                 <mat-form-field class="w-100">
                                     <mat-label>ภาคเรียน</mat-label>
                                     <mat-select>
@@ -97,7 +90,7 @@
                                 </mat-form-field>
                             </div>
 
-                            <div class="col-md-4 top-padding">
+                            <div class="col-sm-6 col-md-4 top-padding">
                                 <mat-form-field class="w-100">
                                     <mat-label>วันทีจัดกิจกรรม</mat-label>
                                     <input matInput [matDatepicker]="picker">
@@ -105,7 +98,7 @@
                                     <mat-datepicker #picker></mat-datepicker>
                                 </mat-form-field>
                             </div>
-                            <div class="col-md-4 top-padding">
+                            <div class="col-sm-6 col-md-4 top-padding">
                                 <mat-form-field class="w-100">
                                     <mat-label>วันทีปิดกิจกรรม</mat-label>
                                     <input matInput [matDatepicker]="picker1">
@@ -115,7 +108,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-sm-6">
                                 <mat-form-field class="w-100">
                                     <input matInput placeholder="สถานที่จัดกิจกรรม">
                                 </mat-form-field>
@@ -125,26 +118,25 @@
                                     <textarea formControlName="actdetail" matInput placeholder="รายละเอียด"></textarea>
                                 </mat-form-field>
                             </div>
-
                         </div>
 
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-sm-6 col-md-2">
                                 <mat-form-field class="w-100">
                                     <input matInput placeholder="จำนวนที่รับ">
                                 </mat-form-field>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-sm-6 col-md-4">
                                 <mat-form-field class="w-100">
                                     <input matInput placeholder="แหล่งงบประมาณ">
                                 </mat-form-field>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-sm-6 col-md-3">
                                 <mat-form-field class="w-100">
                                     <input matInput placeholder="งบประมาณขออนุมัติ">
                                 </mat-form-field>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-sm-6 col-md-3">
                                 <mat-form-field class="w-100">
                                     <input matInput placeholder="งบประมาณใช้งานจริง">
                                 </mat-form-field>
@@ -188,7 +180,7 @@
 
 
 
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-md-12">
                                 <mat-radio-group [ngClass]="{'invalid': ngForm.submitted && fa.gender.errors?.required}"
                                     formControlName="gender" class="margin-left">
@@ -196,7 +188,9 @@
                                     <mat-radio-button value="female"> ปิด </mat-radio-button>
                                 </mat-radio-group>
                             </div>
-                        </div>
+                        </div> -->
+
+                        
                         <div class="row">
                             <div class="col-md-12">
                                 <mat-slide-toggle #pb>สถานะ {{(pb.checked?'เปิด':'ปิด')}} </mat-slide-toggle>

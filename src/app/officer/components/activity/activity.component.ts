@@ -1,3 +1,4 @@
+import { ActivityService } from './../../../services/activity.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./activity.component.css']
 })
 export class ActivityComponent implements OnInit {
-
-  constructor() { }
+  activitylist:any
+  constructor(private activityServie:ActivityService) { }
 
   ngOnInit(): void {
+    this.getallActivity();
+  }
+
+  getallActivity(){
+    this.activityServie.getall().subscribe(
+      (res) => {
+        console.log("activityService=>res: ",res);
+        this.activitylist = res;
+      },
+      (err) => {
+        console.log("activityService=>err: ",err)
+      }  
+    )
   }
 
 }

@@ -1,6 +1,8 @@
+import { ActivityService } from './../../../services/activity.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
+
 
 export interface Task {
   name: string;
@@ -15,21 +17,27 @@ export interface Task {
   styleUrls: ['./activity-add.component.css'],
 })
 export class ActivityAddComponent implements OnInit {
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private activityService: ActivityService ,private formBuilder: FormBuilder) {}
 
   public testdata: String = 'hello test';
 
   formActivity = this.formBuilder.group({
-    actid: ['', [Validators.required]],
+    actcode: ['อัตโนมัติ', [Validators.required]],
     actname: ['', [Validators.required]],
     // firstName:['',[Validators.required]],
     // lastName:['',[Validators.required]],
     actdetail: [''],
     //dob: ['', [Validators.required]],
-    gender: ['', [Validators.required]],
-  });
+    //gender: ['', [Validators.required]],
+  }); 
 
 
+  
+  yearlist = [
+    {name:'2564',value:'2564'},
+    {name:'2565',value:'2565'},
+    {name:'2566',value:'2566'},
+  ]
 
 
 
@@ -77,11 +85,46 @@ export class ActivityAddComponent implements OnInit {
     console.log(this.faculty)
   }
 
+
+  getActivity(){
+    this.activityService.getall().subscribe(
+      (res) => {
+        console.log('subscribe:rxjs -->(res)');  console.log(res);
+      },
+      (err) => {
+        console.log('subscribe:rxjs -->(err)');  console.log(err);
+        if (err.message) {
+          console.log(err.message);
+        } else {
+          console.log(err);
+        }
+      }
+    );
+  }
+
+
   saveForm() {
     if (this.formActivity.valid) {
-      console.log('Profile form data :: ', this.formActivity.value);
+      console.log('Activity data :: ', this.formActivity.value);
+      let data = this.formActivity.value;
+      this.activityService.insert(data).subscribe(
+        (res) => {
+          console.log(res);
+          if (res.affectedRows) {
+            console.log("insert success !!!!")
+          }
+        },
+        (err) => {
+          console.log("insert error ",err)
+          //console.log(err);
+        }
+      );
+
     }
   }
+
+
+
 
   get fa() {
     return this.formActivity.controls;

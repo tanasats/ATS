@@ -1,0 +1,16 @@
+<div class="page-toolbar">
+    <div>
+        <button [routerLink]="['/officer/activity']" mat-icon-button matTooltip="ย้อนกลับ">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <label>รายละเอียดกิจกรรม</label>
+    </div>
+
+    <span>
+        <button [routerLink]="['add']" routerLinkActive="router-link-active" class="justify-content-end" mat-icon-button
+            matTooltip="โหลดข้อมูล" aria-label="Example icon button with a vertical three dot icon">
+            <mat-icon>refresh</mat-icon>
+        </button>
+    </span>
+</div>
+
